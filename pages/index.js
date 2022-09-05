@@ -1,16 +1,17 @@
 import Link from "next/link";
+import Layout from "../components/layout";
 
 export default function IndexPage() {
   const products = [
     {
-      name: "bag"
+      name: "bag",
     },
     {
-      name: "shoes"
+      name: "shoes",
     },
     {
-      name: "socks"
-    }
+      name: "socks",
+    },
   ];
   return (
     <div>
@@ -25,10 +26,11 @@ export default function IndexPage() {
           );
         })}
       </ul>
-      Hello World.{" "}
-      <Link href="/about">
-        <a>About</a>
-      </Link>
+      Hello World.
     </div>
   );
 }
+
+IndexPage.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

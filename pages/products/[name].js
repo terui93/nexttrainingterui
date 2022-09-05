@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Layout from "../../components/commonlayout";
 
 export default function Name() {
   const router = useRouter();
@@ -10,3 +11,7 @@ export default function Name() {
     </h1>
   );
 }
+
+Name.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
